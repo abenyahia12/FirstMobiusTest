@@ -32,7 +32,7 @@ public struct Vector3
         }
     }
     ///////////////////////////////////////////////////////////////////////////////////
-    //Methods 
+    //Methods Static
     // "+" operator 
     public static Vector3 operator +(Vector3 a, Vector3 b)
     {
@@ -53,6 +53,23 @@ public struct Vector3
     {
         return new Vector3(a.X / divider, a.Y / divider, a.Z / divider);
     }
+    // this gives us the Vector3 that is perpendicular to the plan made by a and b
+    // I used this link to remember the math behind cross function https://www.cuemath.com/geometry/cross-product/
+    public static Vector3 Cross(Vector3 a, Vector3 b)
+    {
+        float x, y, z;
+        x = a.Y * b.Z - b.Y * a.Z;
+        y = (a.X * b.Z - b.X * a.Z) * -1;
+        z = a.X * b.Y - b.X * a.Y;
+        return new Vector3(x,y,z);
+    }
+    // a simple multiplication of each vector's coordinate with the corespondant one on the other
+    public static Vector3 Dot(Vector3 a, Vector3 b)
+    {
+        return new Vector3(a.X * b.X, a.Y * b.Y, a.Z * b.Z);
+    }
+    /// ///////////////////////////////////////////////////////
+    // Non Static Methods
     //   ||V||=sqrt(x²+y²+z²) this returns the magnitude of a vector a.
     public float GetMagnitude(Vector3 a)
     {
@@ -63,5 +80,4 @@ public struct Vector3
     {
         return a / GetMagnitude(a);
     }
-
 }
