@@ -2,6 +2,7 @@
 // this is using struct because it's not intended to be modified 
 public struct Vector3
 {
+    //Variables
     //floating-point numbers to represent the position of a point on 3d Dimension using Vector3
     public float X;
     public float Y;
@@ -11,7 +12,7 @@ public struct Vector3
     {
         X = x;
         Y = y;
-        Z = Z;
+        Z = z;
     }
     //some usefull shortcuts inspired from previous experience
     // this returns a new vector 3
@@ -29,5 +30,17 @@ public struct Vector3
         {
             return new Vector3(1, 1, 1);
         }
+    }
+    ///////////////////////////////////////////////////////////////////////////////////
+    //Methods 
+    //+ operator 
+    public static Vector3 operator +(Vector3 a, Vector3 b)
+    {
+        return new Vector3(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
+    }
+    //- operator
+    public static Vector3 operator +(Vector3 a, Vector3 b)
+    {
+        return new Vector3(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
     }
 }
