@@ -43,4 +43,14 @@ public struct Vector3
     {
         return new Vector3(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
     }
+    //* operator
+    public static Vector3 operator *(Vector3 a, float multiplier)
+    {
+        return new Vector3(multiplier * a.X, multiplier * a.Y, multiplier * a.Z);
+    }
+    /// operator
+    public static Vector3 operator /(Vector3 a, float divider)
+    {
+        return new Vector3(a.X / divider, a.Y / divider, a.Z / divider);
+    }
 }
